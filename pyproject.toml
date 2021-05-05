@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "minij-proxy"
+version = "0.1.0"
+description = ""
+authors = ["Stefane Fermigier <sf@fermigier.com>"]
+
+packages = [{ include = "*", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+httpx = "^0.18.1"
+gunicorn = "^20.1.0"
+uvicorn = "^0.13.4"
+Hypercorn = "^0.11.2"
+devtools = "^0.6.1"
+WebOb = "^1.8.7"
+fire = "^0.4.0"
+Paste = "^3.5.0"
+Werkzeug = "^1.0.1"
+starlette = "^0.14.2"
+uvloop = "^0.15.2"
+httptools = "*"
+blacksheep = "^1.0.3"
+trio = "^0.18.0"
+uWSGI = "^2.0.19"
+sh = "^1.14.1"
+salvo = "^0.2"
+falcon = "^3.0.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.4b2"
+isort = "^5.8.0"
+shelmet = "^0.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

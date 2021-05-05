@@ -1,0 +1,13 @@
+HTTP/2 200 
+age: 63
+cache-control: max-age=600, stale-while-revalidate=360000, stale-if-error=31536000, public
+content-type: text/html; charset=utf-8
+date: Mon, 03 May 2021 13:01:52 GMT
+expires: Mon, 03 May 2021 13:11:52 GMT
+last-modified: Mon, 03 May 2021 08:01:56 GMT
+server: Caddy
+server: ATS/7.1.11
+vary: Cookie, Authorization, Accept-Encoding
+vary: Accept-Encoding
+x-cache-headers-set-by: CachingPolicyManager: /nexedi/caching_policy_manager
+

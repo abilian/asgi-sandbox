@@ -1,0 +1,10 @@
+HTTP/2 200 
+access-control-allow-origin: https://mynij.app.officejs.com
+cache-control: max-age=600, stale-while-revalidate=360000, stale-if-error=31536000, public
+content-type: text/html; charset=utf-8
+date: Mon, 03 May 2021 13:01:32 GMT
+last-modified: Mon, 03 May 2021 08:01:56 GMT
+server: Caddy
+server: Zope/(2.13.29, python 2.7.15, linux2) ZServer/1.1
+vary: Cookie,Authorization,Accept-Encoding
+
