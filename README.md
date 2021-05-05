@@ -22,15 +22,15 @@ Current state
       
     - Server: Gunicorn, Uvicorn, Gunicorn+Uvicorn, uWsgi, Hypercorn...
 
-        See: 
-        
-        - https://docs.gunicorn.org/en/latest/design.html#choosing-a-worker-type
-        - 
+        See: https://docs.gunicorn.org/en/latest/design.html#choosing-a-worker-type
 
 2) Running benchmarks:
 
     See: src/benchmarks.py. Some results are currently a bit surprising so this is a WIP.
+    
+    See also: https://gist.github.com/imbolc/15cab07811c32e7d50cc12f380f7f62f for a code example.
 
+    And: https://blog.miguelgrinberg.com/post/ignore-all-web-performance-benchmarks-including-this-one
 
 TODO
 ----
