@@ -133,3 +133,6 @@ publish: clean
 push:
 	rsync -e ssh -avz ./ pilaf:git/minij-proxy/
 
+fetch-results:
+	rsync -e ssh -avz pilaf:git/minij-proxy/results.csv results/
+
