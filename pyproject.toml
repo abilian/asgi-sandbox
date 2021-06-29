@@ -6,6 +6,7 @@ authors = ["Stefane Fermigier <sf@fermigier.com>"]
 
 packages = [{ include = "*", from = "src" }]
 
+
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.25.1"
@@ -36,6 +37,7 @@ antidote = "^1.0.0"
 black = "^21.4b2"
 isort = "^5.8.0"
 shelmet = "^0.6.0"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

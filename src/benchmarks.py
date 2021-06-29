@@ -67,7 +67,9 @@ class Server:
 
     def start(self) -> None:
         print(f"# Starting server: {self.cmd}")
-        self.process = subprocess.Popen(self.args, stdout=subprocess.PIPE, stderr=devnull)
+        self.process = subprocess.Popen(
+            self.args, stdout=subprocess.PIPE, stderr=devnull
+        )
         child_processes.append(self.process)
 
     def kill(self) -> None:
@@ -114,20 +116,26 @@ class Gunicorn(Server):
 class Uwsgi(Server):
     type = "wsgi"
     label = "uWsgi"
-    cmd_tpl = "uwsgi --pidfile server.pid --http localhost:{port} -w {app} -L -p {workers}"
+    cmd_tpl = (
+        "uwsgi --pidfile server.pid --http localhost:{port} -w {app} -L -p {workers}"
+    )
 
 
 class GunicornUvicorn(Server):
     type = "asgi"
     label = "Gunicorn+Uvicorn"
-    cmd_tpl = "gunicorn -b localhost:{port} --pid server.pid " \
+    cmd_tpl = (
+        "gunicorn -b localhost:{port} --pid server.pid "
         "-k uvicorn.workers.UvicornWorker -w {workers} {app}"
+    )
 
 
 class Hypercorn(Server):
     type = "asgi"
     label = "Hypercorn"
-    cmd_tpl = "hypercorn -b localhost:{port} --pid server.pid -w {workers} -k uvloop {app}"
+    cmd_tpl = (
+        "hypercorn -b localhost:{port} --pid server.pid -w {workers} -k uvloop {app}"
+    )
 
 
 SERVER_CLASSES = [Uwsgi, Gunicorn, GunicornUvicorn, Hypercorn]
@@ -154,6 +162,7 @@ result_file = open("results.csv", "w")
 result_file.write(f'Speed;Type;Label;App;Workers;Command"\n')
 result_file.flush()
 
+
 def main():
     start_caddy()
 
@@ -168,7 +177,9 @@ def main():
                     speed = server.run_bench()
                     results.append((speed, server.cmd))
 
-                    result_file.write(f'{speed};{server.type};{server.label};{server.app};{server.workers};"{server.cmd}"\n')
+                    result_file.write(
+                        f'{speed};{server.type};{server.label};{server.app};{server.workers};"{server.cmd}"\n'
+                    )
                     result_file.flush()
                 except KeyboardInterrupt:
                     sys.exit()
